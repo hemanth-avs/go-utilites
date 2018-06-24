@@ -1,7 +1,5 @@
 package sorting
 
-import "fmt"
-
 func Bubblesort(input []int) []int {
 
   input_copy := make([]int, len(input))
