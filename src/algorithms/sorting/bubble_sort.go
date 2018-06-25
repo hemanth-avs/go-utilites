@@ -2,17 +2,27 @@ package sorting
 
 func Bubblesort(input []int) []int {
 
-	input_copy := make([]int, len(input))
-	copy(input_copy, input)
+	inputCopy := make([]int, len(input))
+	copy(inputCopy, input)
 
-	for outerloop := 0; outerloop < len(input_copy); outerloop++ {
-		for innerloop := 0; innerloop < len(input_copy)-1-outerloop; innerloop++ {
-			if input_copy[innerloop+1] < input_copy[innerloop] {
-				temp := input_copy[innerloop]
-				input_copy[innerloop] = input_copy[innerloop+1]
-				input_copy[innerloop+1] = temp
+	isSwapped := false
+	for outerloop := 0; outerloop < len(inputCopy); outerloop++ {
+
+		isSwapped = false
+
+		for innerloop := 0; innerloop < len(inputCopy)-1-outerloop; innerloop++ {
+
+			if inputCopy[innerloop+1] < inputCopy[innerloop] {
+				temp := inputCopy[innerloop]
+				inputCopy[innerloop] = inputCopy[innerloop+1]
+				inputCopy[innerloop+1] = temp
+				isSwapped = true
 			}
 		}
+
+		if !isSwapped {
+			break
+		}
 	}
-	return input_copy
+	return inputCopy
 }
