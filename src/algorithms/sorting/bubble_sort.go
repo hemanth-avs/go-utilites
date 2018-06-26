@@ -1,6 +1,9 @@
 package sorting
 
-func Bubblesort(input []int) []int {
+type BubbleSort struct {
+}
+
+func (b BubbleSort) Sort(input []int) []int {
 
 	inputCopy := make([]int, len(input))
 	copy(inputCopy, input)
