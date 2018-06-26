@@ -16,9 +16,8 @@ func (b BubbleSort) Sort(input []int) []int {
 		for innerloop := 0; innerloop < len(inputCopy)-1-outerloop; innerloop++ {
 
 			if inputCopy[innerloop+1] < inputCopy[innerloop] {
-				temp := inputCopy[innerloop]
-				inputCopy[innerloop] = inputCopy[innerloop+1]
-				inputCopy[innerloop+1] = temp
+
+				inputCopy[innerloop], inputCopy[innerloop+1] = inputCopy[innerloop+1], inputCopy[innerloop]
 				isSwapped = true
 			}
 		}
