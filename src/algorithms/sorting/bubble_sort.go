@@ -5,19 +5,16 @@ type BubbleSort struct {
 
 func (b BubbleSort) Sort(input []int) []int {
 
-	inputCopy := make([]int, len(input))
-	copy(inputCopy, input)
-
 	isSwapped := false
-	for outerloop := 0; outerloop < len(inputCopy); outerloop++ {
+	for outerloop := 0; outerloop < len(input); outerloop++ {
 
 		isSwapped = false
 
-		for innerloop := 0; innerloop < len(inputCopy)-1-outerloop; innerloop++ {
+		for innerloop := 0; innerloop < len(input)-1-outerloop; innerloop++ {
 
-			if inputCopy[innerloop+1] < inputCopy[innerloop] {
+			if input[innerloop+1] < input[innerloop] {
 
-				inputCopy[innerloop], inputCopy[innerloop+1] = inputCopy[innerloop+1], inputCopy[innerloop]
+				input[innerloop], input[innerloop+1] = input[innerloop+1], input[innerloop]
 				isSwapped = true
 			}
 		}
@@ -26,5 +23,5 @@ func (b BubbleSort) Sort(input []int) []int {
 			break
 		}
 	}
-	return inputCopy
+	return input
 }
