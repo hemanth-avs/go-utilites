@@ -5,32 +5,34 @@ type CocktailShakerSort struct {
 
 func (c CocktailShakerSort) Sort(input []int) []int {
 
-	isSwapper := false
-	for outerloop := 0; outerloop < (len(input)+1)/2; outerloop++ {
+	isSwapped := false
+	lindex := 0
+	rindex := len(input)
 
-		isSwapper = false
-		for innerloop := outerloop; innerloop < len(input)-1-outerloop; innerloop++ {
+	for lindex < rindex {
+
+		isSwapped = false
+		for innerloop := lindex; innerloop < rindex-1; innerloop++ {
 
 			if input[innerloop] > input[innerloop+1] {
 				input[innerloop], input[innerloop+1] = input[innerloop+1], input[innerloop]
-				isSwapper = true
+				isSwapped = true
 			}
 		}
 
-		if !isSwapper {
-			return input
-		}
+		rindex--
 
-		isSwapper = false
-		for innerloop := len(input) - outerloop - 1; innerloop >= outerloop+1; innerloop-- {
+		for outerloop := rindex; outerloop > lindex; outerloop-- {
 
-			if input[innerloop] < input[innerloop-1] {
-				input[innerloop-1], input[innerloop] = input[innerloop], input[innerloop-1]
-				isSwapper = true
+			if input[outerloop] < input[outerloop-1] {
+				input[outerloop-1], input[outerloop] = input[outerloop], input[outerloop-1]
+				isSwapped = true
 			}
 		}
 
-		if !isSwapper {
+		lindex++
+
+		if !isSwapped {
 			return input
 		}
 
