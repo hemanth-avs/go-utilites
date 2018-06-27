@@ -4,12 +4,16 @@ type InsertionSort struct {
 }
 
 func (i InsertionSort) Sort(input []int) []int {
+
 	for ol := 1; ol < len(input); ol++ {
-		for il := ol; il > 0; il-- {
-			if input[il] < input[il-1] {
-				input[il], input[il-1] = input[il-1], input[il]
-			}
+		indexElement := input[ol]
+		innerLoop := ol
+		for innerLoop > 0 && input[innerLoop-1] > indexElement {
+			input[innerLoop] = input[innerLoop-1]
+			innerLoop--
 		}
+		input[innerLoop] = indexElement
+
 	}
 	return input
 }
