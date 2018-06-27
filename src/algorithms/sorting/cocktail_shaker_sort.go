@@ -19,7 +19,6 @@ func (c CocktailShakerSort) Sort(input []int) []int {
 				isSwapped = true
 			}
 		}
-
 		rindex--
 
 		for outerloop := rindex; outerloop > lindex; outerloop-- {
@@ -29,7 +28,6 @@ func (c CocktailShakerSort) Sort(input []int) []int {
 				isSwapped = true
 			}
 		}
-
 		lindex++
 
 		if !isSwapped {
