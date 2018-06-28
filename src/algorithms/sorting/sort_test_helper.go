@@ -14,7 +14,7 @@ func SortTester(sort SortAlgorithm, t *testing.T) {
 		}
 	}
 
-	input := []int{1, 2, 3, 2, 1}
+	input := []int{1, 2, 3, 2, 1, 0}
 	sorted_input := []int{1, 1, 2, 2, 3}
 	checkSortResults(t, sort, input, sorted_input)
 
