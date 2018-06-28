@@ -26,6 +26,8 @@ func SortTester(sort SortAlgorithm, t *testing.T) {
 	randArray100 := generateRandArray(100)
 	randArray500 := generateRandArray(500)
 	randArray1000 := generateRandArray(1000)
+	randArray20000 := generateRandArray(10000)
+	randArray300000 := generateRandArray(100000)
 
 	testCases := []struct {
 		name     string
@@ -41,6 +43,8 @@ func SortTester(sort SortAlgorithm, t *testing.T) {
 		{"testcase7", randArray100, sort.Sort(randArray100)},
 		{"testcase8", randArray500, sort.Sort(randArray500)},
 		{"testcase9", randArray1000, sort.Sort(randArray1000)},
+		{"testcase10", randArray20000, sort.Sort(randArray20000)},
+		{"testcase11", randArray300000, sort.Sort(randArray300000)},
 	}
 
 	for _, tc := range testCases {
