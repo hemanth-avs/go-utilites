@@ -27,6 +27,7 @@ func SortTester(sort SortAlgorithm, t *testing.T) {
 
 	randArray100 := generateRandArray(100)
 	randArray150000 := generateRandArray(150000)
+	randArray300000 := generateRandArray(300000)
 
 	testCases := []struct {
 		name  string
