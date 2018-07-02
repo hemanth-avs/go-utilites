@@ -18,7 +18,7 @@ func SortTester(sort SortAlgorithm, t *testing.T) {
 
 	checkSortResults := func(t *testing.T, sort SortAlgorithm, testInput []int) {
 		sortedArray := sort.Sort(testInput)
-		sortedArrayIntSlice := gosort.IntSlice(sortedArray[0:])
+		sortedArrayIntSlice := gosort.IntSlice(sortedArray)
 
 		if !gosort.IsSorted(sortedArrayIntSlice) {
 			t.Error("Sort Failed")
